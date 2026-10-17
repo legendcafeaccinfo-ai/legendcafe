@@ -550,7 +550,7 @@
 
       <div class="order-summary" id="orderSummary">
         <div class="os-row"><span>Subtotal</span><span id="osSubtotal">Rs. 0</span></div>
-        <div class="os-row"><span>Tax (10%)</span><span id="osTax">Rs. 0</span></div>
+        <div class="os-row"><span>Tax (8%)</span><span id="osTax">Rs. 0</span></div>
         <div class="os-row"><span>Delivery</span><span>Free</span></div>
         <div class="os-row os-total"><span>Total</span><span id="osTotal">Rs. 0</span></div>
       </div>
@@ -613,9 +613,9 @@ const CATS = [
     id:'pizza', label:'Pizza', icon:'🍕', sub:'Regular, Special, Crust Club',
     render:()=>{
       const regular = {cols:['S-7"','M-10"','L-13"','XL-18"'], rows:[
-        ['Chicken Tikka',5000,1090,1550,2370],
-        ['Chicken Fajita',5000,1090,1550,2370],
-        ['Pepperoni',5000,1090,1550,2370],
+        ['Chicken Tikka',690,1090,1550,2370],
+        ['Chicken Fajita',690,1090,1550,2370],
+        ['Pepperoni',690,1090,1550,2370],
       ]};
       const special = {cols:['M-10"','L-13"'], rows:[
         ['Chicken Supreme',1380,1860],
@@ -832,7 +832,7 @@ const CUSTOMER_KEY = 'legendCafeCustomer_v1';
 
 let cart = loadCart();
 let orderType = 'Delivery';
-const TAX_RATE = 0.10;
+const TAX_RATE = 0.08;
 
 function loadCart(){
   try{
@@ -997,7 +997,7 @@ function buildOrderMessage(){
   items.forEach((i, idx) => {
     msg += `${idx+1}. ${i.name} x${i.qty} — Rs. ${i.price * i.qty}\n`;
   });
-  msg += `\nSubtotal: Rs. ${cartSubtotal()}\nTax (10%): Rs. ${cartTax()}\n*Total: Rs. ${cartTotal()}*\n`;
+  msg += `\nSubtotal: Rs. ${cartSubtotal()}\nTax (8%): Rs. ${cartTax()}\n*Total: Rs. ${cartTotal()}*\n`;
   if(notes) msg += `\n📝 Notes: ${notes}\n`;
   msg += `\nPlease confirm my order and estimated time. Thank you!`;
   return msg;
